@@ -33,8 +33,6 @@ int main(){
                 cin >> admin_id;
                 Admin new_admin(admin_id, user, pass);
                 cout<<"log for this role ->"<<endl;
-//                cout<<"create_professor\n";
-//                cout<<"create_student\n";
                 cout<<"read\n";
                 cout<<"update_professor_number\n";
                 cout<<"update_student_number\n";
@@ -47,11 +45,46 @@ int main(){
                 cin>>input;
                 if(input=="update_professor_number"){
                     new_admin.read();
-
-
-
+                    string professor_name1;
+                    cout << "Enter your professor_name" << endl;
+                    cin >> professor_name1;
+                    string professor_number1;
+                    cout << "Enter your professor_number" << endl;
+                    cin >> professor_number1;
+                    cout<<"username: "<<endl;
+                    string username;
+                    string password;
+                    cin>>username;
+                    cout<<endl;
+                    cout<<"password: "<<endl;
+                    cin>>password;
+                    string new_professor_number;
+                    cout<<"enter new number: "<<endl;
+                    cin>>new_professor_number;
+                    Professor professor2(professor_name1,professor_name1,username,password);
+                    new_admin.update_professor_number(professor2,new_professor_number);
                 }
-
+                else if(input=="update_student_number"){
+                    new_admin.read();
+                    string student_name1;
+                    cout << "Enter your student_name" << endl;
+                    cin >> student_name1;
+                    string student_number1;
+                    cout << "Enter your student_number" << endl;
+                    cin >> student_number1;
+                    cout<<"username: "<<endl;
+                    string username;
+                    string password;
+                    cin>>username;
+                    cout<<endl;
+                    cout<<"password: "<<endl;
+                    cin>>password;
+                    string new_student_number;
+                    cout<<"enter new number: "<<endl;
+                    cin>>new_student_number;
+                    Student student2(student_number1,username,password);
+                    new_admin.update_student_number(student2,new_student_number);
+                }
             }
             else{
                 cout<<"log for this role ->"<<endl;
@@ -65,7 +98,50 @@ int main(){
                 cout<<"restore_user_professor\n";
                 cout<<"restore_user_student\n";
                 cout<<"exist\n";
-
+                string input;
+                cin>>input;
+                if(input=="update_professor_number") {
+                    admin1.read();
+                    string professor_name1;
+                    cout << "Enter your professor_name" << endl;
+                    cin >> professor_name1;
+                    string professor_number1;
+                    cout << "Enter your professor_number" << endl;
+                    cin >> professor_number1;
+                    cout << "username: " << endl;
+                    string username;
+                    string password;
+                    cin >> username;
+                    cout << endl;
+                    cout << "password: " << endl;
+                    cin >> password;
+                    string new_professor_number;
+                    cout << "enter new number: " << endl;
+                    cin >> new_professor_number;
+                    Professor professor2(professor_name1, professor_name1, username, password);
+                    admin1.update_professor_number(professor2, new_professor_number);
+                }
+                else if(input=="update_student_number") {
+                    admin1.read();
+                    string student_name1;
+                    cout << "Enter your student_name" << endl;
+                    cin >> student_name1;
+                    string student_number1;
+                    cout << "Enter your student_number" << endl;
+                    cin >> student_number1;
+                    cout << "username: " << endl;
+                    string username;
+                    string password;
+                    cin >> username;
+                    cout << endl;
+                    cout << "password: " << endl;
+                    cin >> password;
+                    string new_student_number;
+                    cout << "enter new number: " << endl;
+                    cin >> new_student_number;
+                    Student student2(student_number1, username, password);
+                    admin1.update_student_number(student2, new_student_number);
+                }
             }
         }
         else if(user=="Professor"){
