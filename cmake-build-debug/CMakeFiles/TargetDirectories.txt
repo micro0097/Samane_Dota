@@ -1,0 +1,3 @@
+C:/Users/TS/CLionProjects/samanedota/cmake-build-debug/CMakeFiles/new_target.dir
+C:/Users/TS/CLionProjects/samanedota/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/TS/CLionProjects/samanedota/cmake-build-debug/CMakeFiles/rebuild_cache.dir

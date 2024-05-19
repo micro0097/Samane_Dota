@@ -1,0 +1,20 @@
+# ninja log v5
+4	509	7339489861886596	CMakeFiles/samanedota.dir/main.cpp.obj	b77394dfb07b37b6
+510	631	7339489863065238	samanedota.exe	31224f17c0adcc89
+14	372	7341697120757839	CMakeFiles/new_target.dir/Person.cpp.obj	4723d3abb277bc02
+3	376	7341697120799295	CMakeFiles/new_target.dir/main.cpp.obj	d0207dc7bda4fb8a
+23	262	7341696403117817	CMakeFiles/new_target.dir/Course.cpp.obj	dd23c61200b7173e
+376	633	7341697123326395	new_target.exe	646bfd89215b8500
+27	263	7341696403117817	CMakeFiles/new_target.dir/Student.cpp.obj	81342392aa66f600
+12	261	7341696403117817	CMakeFiles/new_target.dir/Grade.cpp.obj	ca3ddc939e531bb0
+16	263	7341696403117817	CMakeFiles/new_target.dir/Professor.cpp.obj	bcd7ca9cda53379d
+8	358	7341697120601985	CMakeFiles/new_target.dir/Admin.cpp.obj	5df4ce327ca1bdf1
+22	738	7378183192218205	CMakeFiles/new_target.dir/Person.cpp.obj	4723d3abb277bc02
+17	745	7378183192268215	CMakeFiles/new_target.dir/Course.cpp.obj	dd23c61200b7173e
+35	855	7378183193388172	CMakeFiles/new_target.dir/Student.cpp.obj	81342392aa66f600
+4	879	7378183193628202	CMakeFiles/new_target.dir/main.cpp.obj	d0207dc7bda4fb8a
+11	971	7378183194545752	CMakeFiles/new_target.dir/Admin.cpp.obj	5df4ce327ca1bdf1
+29	994	7378183194766998	CMakeFiles/new_target.dir/Professor.cpp.obj	bcd7ca9cda53379d
+994	1418	7378183198972230	new_target.exe	e014b36272710bba
+3	618	7378187566253830	CMakeFiles/new_target.dir/main.cpp.obj	d0207dc7bda4fb8a
+619	761	7378187567634587	new_target.exe	e014b36272710bba
