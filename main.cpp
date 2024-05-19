@@ -85,6 +85,42 @@ int main(){
                     Student student2(student_number1,username,password);
                     new_admin.update_student_number(student2,new_student_number);
                 }
+                else if(input=="delete_member_professor"){
+                    new_admin.read();
+                    string professor_name1;
+                    cout << "Enter your professor_name" << endl;
+                    cin >> professor_name1;
+                    string professor_number1;
+                    cout << "Enter your professor_number" << endl;
+                    cin >> professor_number1;
+                    cout<<"username: "<<endl;
+                    string username;
+                    string password;
+                    cin>>username;
+                    cout<<endl;
+                    cout<<"password: "<<endl;
+                    cin>>password;
+                    Professor professor2(professor_name1,professor_name1,username,password);
+                    new_admin.delete_member_professor(professor2);
+                }
+                else if(input=="delete_member_student"){
+                    new_admin.read();
+                    string student_name1;
+                    cout << "Enter your student_name" << endl;
+                    cin >> student_name1;
+                    string student_number1;
+                    cout << "Enter your student_number" << endl;
+                    cin >> student_number1;
+                    cout<<"username: "<<endl;
+                    string username;
+                    string password;
+                    cin>>username;
+                    cout<<endl;
+                    cout<<"password: "<<endl;
+                    cin>>password;
+                    Student student2(student_number1,username,password);
+                    new_admin.delete_member_student(student2);
+                }
             }
             else{
                 cout<<"log for this role ->"<<endl;
