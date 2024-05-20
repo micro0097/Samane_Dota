@@ -197,11 +197,8 @@ void Admin::delete_member_professor(Professor &professor) {
         int find_professor=0;
         vector<string> information;
         while(getline(read_courses,line)){
-            if(line=="Professor: "+professor.professor_number){
+            if(line=="Professor: "+professor.professor_number && find_professor==0){
                 find_professor+=1;
-            }
-            else if(find_professor==1){
-                find_professor=2;
                 line="del-"+line;
             }
             information.push_back(line);
@@ -252,12 +249,9 @@ void Admin::delete_member_student(Student &student) {
         int find_student=0;
         vector<string> information;
         while(getline(read_courses,line)){
-            if(line.find(student.student_number)!=string::npos){
-                find_student+=1;
-            }
-            else if(find_student==1){
-                find_student=2;
+            if(line.find(student.student_number)!=string::npos && find_student==0){
                 line="del-"+line;
+                find_student+=1;
             }
             information.push_back(line);
         }
@@ -307,12 +301,9 @@ void Admin::restore_user_professor(Professor &professor) {
         int find_professor=0;
         vector<string> information;
         while(getline(read_courses,line)){
-            if(line=="del-Professor: "+professor.professor_number){
-                find_professor+=1;
-            }
-            else if(find_professor==1){
-                find_professor=2;
+            if(line=="del-Professor: "+professor.professor_number && find_professor==0){
                 line=line.substr(4,line.length()-4);
+                find_professor+=1;
             }
             information.push_back(line);
         }
@@ -365,7 +356,7 @@ void Admin::restore_user_student(Student &student) {
             if(line.find(student.student_number)!=string::npos){
                 find_student+=1;
             }
-            else if(find_student==1){
+            if(find_student==1){
                 find_student=2;
                 line=line.substr(4,line.length()-4);
             }

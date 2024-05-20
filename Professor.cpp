@@ -58,11 +58,15 @@ void Professor::add_students_to_course(string &student,Course &course) {
                     find_professor += 1;
                 } else if (find_professor == 1 && line.find("Professor") != string::npos) {
                     find_professor = 2;
-                } else if (find_professor == 1 && line.find(course.get_course_name()) != string::npos) {
+                }
+                if (find_professor == 1 && line.find(course.get_course_name()) != string::npos) {
                     find_course = true;
+                    information.push_back(line);
                     information.push_back(student + "-");
                 }
-                information.push_back(line);
+                else{
+                    information.push_back(line);
+                }
             }
             read_courses.close();
             if (!find_course) {
@@ -175,7 +179,7 @@ void Professor::set_grades(Course &course, string &student,string &grade) {
                 } else if (find_professor == 1 && line.find(course.get_course_name()) != string::npos) {
                     find_course = true;
                 } else if (find_professor == 1 && find_course && line.find(student) != string::npos) {
-                    if (line.find("del") == string::npos) {
+                    if (line.find("del") != string::npos) {
                         find_del = true;
                     }
                     find_student += 1;
@@ -256,7 +260,7 @@ void Professor::set_homework_grades(string &student, Course &course, string &hom
                 } else if (find_professor == 1 && line.find(course.get_course_name()) != string::npos) {
                     find_course = true;
                 } else if (find_professor == 1 && find_course && line.find(student) != string::npos) {
-                    if (line.find("del") == string::npos) {
+                    if (line.find("del") != string::npos) {
                         find_del = true;
                     }
                     find_student += 1;

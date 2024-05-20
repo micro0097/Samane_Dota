@@ -423,10 +423,10 @@ int main(){
             cout<<"log for this role ->"<<endl;
             cout<<"set_homework_ans\n";
             cout<<"view_courses_and_grades\n";
+            string input_student;
+            cin>>input_student;
             if(!admin1.exist(pass)) {
                 Student student1 = admin1.create_student(student_number, user, pass);
-                string input_student;
-                cin>>input_student;
                 if(input_student=="set_homework_ans"){
                     cout<<"Enter the course: ";
                     string course_name;
@@ -444,8 +444,6 @@ int main(){
             }
             else{
                 Student student1(student_number, user, pass);
-                string input_student;
-                cin>>input_student;
                 if(input_student=="set_homework_ans"){
                     cout<<"Enter the course: ";
                     string course_name;
