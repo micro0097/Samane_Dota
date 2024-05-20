@@ -1,9 +1,12 @@
 #include "Admin.h"
 
-Admin::Admin(string admin_id,string _username, string _password):Admin_ID(admin_id), person(_username,_password){
+Admin::Admin(string admin_id,string _username, string _password):Admin_ID(admin_id),password(_password), person(_username,_password){
+}
+
+void Admin::save_admin(Admin &admin) {
     ofstream user("user_information.txt",ios::app);
     if(user.is_open()) {
-        user << Admin_ID + "-" + _username + "-" + _password << endl;
+        user << admin.Admin_ID + "-" + "Admin" + "-" + admin.password << endl;
     }
     user.close();
 }
@@ -43,6 +46,14 @@ void Admin::read() {
         }
     }
     user.close();
+    ifstream read_courses("course_file.txt");
+    if(read_courses.is_open()){
+        string line;
+        while(getline(read_courses,line)){
+            cout<<line<<endl;
+        }
+    }
+    read_courses.close();
 }
 
 void Admin::update_professor_number(Professor &professor, string &new_professor_number) {
@@ -54,13 +65,17 @@ void Admin::update_professor_number(Professor &professor, string &new_professor_
             if(l.find(professor.professor_number)!=string::npos){
                 int len=professor.professor_number.length();
                 int len_l=l.length();
-                l=new_professor_number+l.substr(len,len_l-len);
+                string string1;
+                string1=new_professor_number+l.substr(len,len_l-len);
+                users.push_back(string1);
             }
-            users.push_back(l);
+            else {
+                users.push_back(l);
+            }
         }
         user.close();
         ofstream user_edit("user_information.txt");
-        if(user.is_open()) {
+        if(user_edit.is_open()) {
             for (string &i: users) {
                 user_edit<<i<<endl;
             }
@@ -113,7 +128,7 @@ void Admin::update_student_number(Student &student, string &new_student_number) 
         }
         user.close();
         ofstream user_edit("user_information.txt");
-        if(user.is_open()) {
+        if(user_edit.is_open()) {
             for (string &i: users) {
                 user_edit<<i<<endl;
             }
@@ -154,6 +169,28 @@ void Admin::update_student_number(Student &student, string &new_student_number) 
 }
 
 void Admin::delete_member_professor(Professor &professor) {
+    ifstream user("user_information.txt");
+    if(user.is_open()){
+        string l;
+        vector<string> users;
+        while (getline(user,l)){
+            if(l.find(professor.professor_number)!=string::npos){
+                l="del-"+l;
+            }
+            users.push_back(l);
+        }
+        user.close();
+        ofstream user_edit("user_information.txt");
+        if(user_edit.is_open()) {
+            for (string &i: users) {
+                user_edit<<i<<endl;
+            }
+        }
+        user_edit.close();
+    }
+    else{
+        user.close();
+    }
     ifstream read_courses("course_file.txt");
     if(read_courses.is_open()){
         string line;
@@ -187,6 +224,28 @@ void Admin::delete_member_professor(Professor &professor) {
 }
 
 void Admin::delete_member_student(Student &student) {
+    ifstream user("user_information.txt");
+    if(user.is_open()){
+        string l;
+        vector<string> users;
+        while (getline(user,l)){
+            if(l.find(student.student_number)!=string::npos){
+                l="del-"+l;
+            }
+            users.push_back(l);
+        }
+        user.close();
+        ofstream user_edit("user_information.txt");
+        if(user_edit.is_open()) {
+            for (string &i: users) {
+                user_edit<<i<<endl;
+            }
+        }
+        user_edit.close();
+    }
+    else{
+        user.close();
+    }
     ifstream read_courses("course_file.txt");
     if(read_courses.is_open()){
         string line;
@@ -220,6 +279,28 @@ void Admin::delete_member_student(Student &student) {
 }
 
 void Admin::restore_user_professor(Professor &professor) {
+    ifstream user("user_information.txt");
+    if(user.is_open()){
+        string l;
+        vector<string> users;
+        while (getline(user,l)){
+            if(l.find(professor.professor_number)!=string::npos && l.find("del")!=string::npos){
+                l=l.substr(4,l.length()-4);
+            }
+            users.push_back(l);
+        }
+        user.close();
+        ofstream user_edit("user_information.txt");
+        if(user_edit.is_open()) {
+            for (string &i: users) {
+                user_edit<<i<<endl;
+            }
+        }
+        user_edit.close();
+    }
+    else{
+        user.close();
+    }
     ifstream read_courses("course_file.txt");
     if(read_courses.is_open()){
         string line;
@@ -253,6 +334,28 @@ void Admin::restore_user_professor(Professor &professor) {
 }
 
 void Admin::restore_user_student(Student &student) {
+    ifstream user("user_information.txt");
+    if(user.is_open()){
+        string l;
+        vector<string> users;
+        while (getline(user,l)){
+            if(l.find(student.student_number)!=string::npos && l.find("del")!=string::npos){
+                l=l.substr(4,l.length()-4);
+            }
+            users.push_back(l);
+        }
+        user.close();
+        ofstream user_edit("user_information.txt");
+        if(user_edit.is_open()) {
+            for (string &i: users) {
+                user_edit<<i<<endl;
+            }
+        }
+        user_edit.close();
+    }
+    else{
+        user.close();
+    }
     ifstream read_courses("course_file.txt");
     if(read_courses.is_open()){
         string line;
@@ -300,7 +403,3 @@ bool Admin::exist(string &info) {
     read_user.close();
     return f;
 }
-
-
-
-

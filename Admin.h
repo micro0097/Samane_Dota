@@ -5,8 +5,10 @@
 #include "Professor.h"
 class Admin:person{
     const string Admin_ID;
+    string password;
 public:
     explicit Admin(string admin_id="12345678",string _username="Admin", string _password="alireza");
+    void save_admin(Admin &admin);
     Professor create_professor(string &name,string &_professor_number, string &_username, string &_password);
     Student create_student(string& _student_number,string& _username,string& _password);
     void read(); //All of users information

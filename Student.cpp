@@ -8,7 +8,7 @@ void Student::set_homework_ans(string &course,string &_homework) {
     this->homework_answer=_homework;
     ofstream homework_ans("homework_answer.txt",ios::app);
     if(homework_ans.is_open()){
-        homework_ans<<student_number+"-"+course+"-"+homework_answer;
+        homework_ans<<student_number+"-"+course+"-"+homework_answer<<endl;
     }
     homework_ans.close();
 }

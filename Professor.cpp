@@ -12,16 +12,14 @@ void Professor::create_course(Course &course) {
         string line;
         vector<string> information;
         while(getline(read_courses,line)){
-            if(line=="Professor: "+professor_number){
+            if(line=="Professor: "+professor_number && find_professor==0){
+                information.push_back(line);
+                information.push_back(to_string(course_number)+"_ "+course.get_course_name());
                 find_professor+=1;
             }
-            else if(find_professor==1 && line.find("Professor")!=string::npos){
-                find_professor=2;
+            else {
+                information.push_back(line);
             }
-            else if(find_professor==1){
-                information.push_back(to_string(course_number)+"_ "+course.get_course_name());
-            }
-            information.push_back(line);
         }
         read_courses.close();
         ofstream courses_file;
@@ -291,10 +289,3 @@ void Professor::set_homework_grades(string &student, Course &course, string &hom
         }
     }
 }
-
-
-
-
-
-
-
