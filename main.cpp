@@ -450,6 +450,7 @@ int main(){
                     cin>>course_name;
                     cout<<"Enter the homework answer : "<<endl;
                     string homework_ans;
+                    cin>>homework_ans;
                     student1.set_homework_ans(course_name,homework_ans);
                 }
                 else if(input_student=="view_courses_and_grades"){

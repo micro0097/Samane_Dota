@@ -29,7 +29,7 @@ void Student::view_courses_and_grades(string& course) {
                 find_course= true;
             }
             else if(find_course && line.find(student_number)!=string::npos){
-                if(line.find("del")==string::npos){
+                if(line.find("del")!=string::npos){
                     find_del= true;
                 }
                 find_student+=1;
