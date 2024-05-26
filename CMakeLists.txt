@@ -15,4 +15,6 @@ add_executable(new_target
         Person.h
         Student.cpp
         Student.h
+        homework.cpp
+        homework.h
 )

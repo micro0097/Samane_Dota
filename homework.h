@@ -1,0 +1,8 @@
+//
+// Created by TS on 5/26/2024.
+//
+
+#ifndef SAMANEDOTA_HOMEWORK_H
+#define SAMANEDOTA_HOMEWORK_H
+
+#endif //SAMANEDOTA_HOMEWORK_H

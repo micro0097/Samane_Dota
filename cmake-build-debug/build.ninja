@@ -85,6 +85,12 @@ build CMakeFiles/new_target.dir/Student.cpp.obj: CXX_COMPILER__new_target_unscan
   OBJECT_DIR = CMakeFiles\new_target.dir
   OBJECT_FILE_DIR = CMakeFiles\new_target.dir
 
+build CMakeFiles/new_target.dir/homework.cpp.obj: CXX_COMPILER__new_target_unscanned_Debug C$:/Users/TS/CLionProjects/samanedota/homework.cpp || cmake_object_order_depends_target_new_target
+  DEP_FILE = CMakeFiles\new_target.dir\homework.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\new_target.dir
+  OBJECT_FILE_DIR = CMakeFiles\new_target.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target new_target
@@ -93,7 +99,7 @@ build CMakeFiles/new_target.dir/Student.cpp.obj: CXX_COMPILER__new_target_unscan
 #############################################
 # Link the executable new_target.exe
 
-build new_target.exe: CXX_EXECUTABLE_LINKER__new_target_Debug CMakeFiles/new_target.dir/main.cpp.obj CMakeFiles/new_target.dir/Admin.cpp.obj CMakeFiles/new_target.dir/Course.cpp.obj CMakeFiles/new_target.dir/Professor.cpp.obj CMakeFiles/new_target.dir/Person.cpp.obj CMakeFiles/new_target.dir/Student.cpp.obj
+build new_target.exe: CXX_EXECUTABLE_LINKER__new_target_Debug CMakeFiles/new_target.dir/main.cpp.obj CMakeFiles/new_target.dir/Admin.cpp.obj CMakeFiles/new_target.dir/Course.cpp.obj CMakeFiles/new_target.dir/Professor.cpp.obj CMakeFiles/new_target.dir/Person.cpp.obj CMakeFiles/new_target.dir/Student.cpp.obj CMakeFiles/new_target.dir/homework.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\new_target.dir
